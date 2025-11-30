@@ -41,8 +41,8 @@ class DAO:
 
         cursor = conn.cursor(dictionary=True)
         query = ('''SELECT LEAST (id_hub_origine, id_hub_destinazione) as id1,
-                 GREATEST (id_hub_origine, id_hub_destinazione) as id2,
-                 AVG(valore_merce) as pes
+                           GREATEST (id_hub_origine, id_hub_destinazione) as id2,
+                           AVG(valore_merce) as pes
                  FROM SPEDIZIONE
                  GROUP BY id1, id2''')
         cursor.execute(query)
