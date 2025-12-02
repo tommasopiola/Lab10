@@ -57,4 +57,3 @@ class Model:
         """
         # TODO
         return self.G.edges(data=True)
-
