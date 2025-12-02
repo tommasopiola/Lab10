@@ -18,8 +18,9 @@ class Model:
         all_hubs = DAO.get_all_hubs()
         all_connessioni = DAO.get_all_connessioni()
 
-        # Aggiungo tutti i nodi al grafo G
+        # Se aggiungo tutti i nodi al grafo G la funzione .get_num_nodes() restituirà sempre 50 ovvero il totale degli hub anche non collegati ad un arco
         self.G.add_nodes_from(all_hubs)
+        # Oppure lascio che networkx crei automaticamente i nodi nella funzione che crea gli archi (così .get_num_nodes restituirà il numero effettivo di nodi (e dunque di hub) che hanno almeno un arco (una tratta valida per la soglia))
 
         # Creo una mappa per recuperare l'oggetto Hub partendo dal suo ID
         # id_map[1] -> Oggetto Hub(id=1, ...)
